@@ -32,7 +32,21 @@ module.exports = {
     outputFile: "gas-report.txt",
     noColors: true,
   },
-  solidity: "0.8.8",
+  etherscan: {
+    apiKey: {
+      goerli: ETHERSCAN_API_KEY,
+    },
+  },
+  solidity: {
+    compilers: [
+      {
+        version: "0.8.8",
+      },
+      {
+        version: "0.4.24",
+      },
+    ],
+  },
   namedAccounts: {
     deployer: {
       default: 0,
@@ -40,5 +54,8 @@ module.exports = {
     player: {
       default: 1,
     },
+  },
+  mocha: {
+    timeout: 600000, //200 seconds max
   },
 };
