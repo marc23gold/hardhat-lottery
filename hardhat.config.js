@@ -24,6 +24,7 @@ module.exports = {
       blockConfirmations: 6,
       url: GOERLI_RPC_URL,
       accounts: [PRIVATE_KEY],
+      saveDeployments: true,
     },
   },
   gasReporter: {
@@ -47,9 +48,14 @@ module.exports = {
       },
     ],
   },
+  contractSizer: {
+    runOnCompile: false,
+    only: ["Raffle"],
+  },
   namedAccounts: {
     deployer: {
       default: 0,
+      1: 0,
     },
     player: {
       default: 1,
